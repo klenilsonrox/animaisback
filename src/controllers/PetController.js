@@ -7,6 +7,13 @@ export const getAllPets = async (req,res)=>{
   
     try{
        const pets = await getPetsService()
+
+       pets.map(item=>{
+        if(item.image===""){
+            item.image==="https://centralcabos.vteximg.com.br/arquivos/ids/159950-400-400/produto_sem_foto.gif?v=635922653155000000"
+        }
+       })
+
         return res.status(200).json(pets)
     }
     catch(error){
